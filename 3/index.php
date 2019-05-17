@@ -15,7 +15,8 @@ var_dump($ffi->sample("sample test test", fn($i) => $i % 3));
 var_dump($ffi->sample("sample test test", fn($i) => $i % 4));
 var_dump($ffi->sample("sample test test", fn($_) => true));
 
-/**
+/*
+
  output:
 
 object(FFI)#1 (0) {
@@ -24,4 +25,4 @@ string(6) "SamPle"
 string(6) "SampLe"
 string(6) "SAMPLE"
 
- **/
+ */

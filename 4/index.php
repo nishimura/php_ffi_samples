@@ -30,11 +30,12 @@ var_dump($ffi->sample("sample test test", $pcbdata));
 $n = 1;
 var_dump($ffi->sample("sample test test", $pcbdata));
 
-/**
+/*
+
  output:
 
 string(6) "SamPle"
 string(6) "SampLe"
 string(6) "SAMPLE"
 
- **/
+ */

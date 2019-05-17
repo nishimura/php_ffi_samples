@@ -16,6 +16,8 @@ cd php-src
 git checkout PHP-7.4
 ./configure --with-ffi
 make
+
+cd ..
 ```
 
 

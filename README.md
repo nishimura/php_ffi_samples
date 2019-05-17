@@ -44,7 +44,7 @@ cd php_ffi_samples
 
 ## Create DSO Module
 
-required: build tools
+require: c build tools
 
 ```bash
 cd 2
@@ -61,4 +61,13 @@ make
 * 3: call with closure argument
 
 * 4: c struct, php reference and callback
+* 5: FFI bridge
+
+
+
+## FFI Bridge to Haskell
+
+require: haskell build tools (ghc)
+
+PHP => FFI C => FFI Haskell => Callback C => Callback PHP => Set c variable instead of return value
 

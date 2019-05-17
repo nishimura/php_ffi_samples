@@ -35,8 +35,22 @@ cd php_ffi_samples
 ../php-src/sapi/cli/php -d ffi.enable=1 -S localhost:8000
 
 # and access to
+#   http://localhost:8080/
 #   http://localhost:8080/1/
-#   http://localhost:8080/2/
 #   ...
+```
+
+
+
+## Create DSO Module
+
+required: build tools
+
+```bash
+cd 2
+make
+
+# and access to
+#   http://localhost:8080/2/
 ```
 

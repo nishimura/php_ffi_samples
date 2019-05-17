@@ -23,7 +23,7 @@ make
 ## Checkout Samples
 
 ```bash
-
+git clone https://github.com/nishimura/php_ffi_samples.git
 ```
 
 

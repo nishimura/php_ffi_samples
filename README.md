@@ -58,5 +58,7 @@ make
 
 ## Other Samples
 
-* 2: call with closure argument
+* 3: call with closure argument
+
+* 4: c struct, php reference and callback
 

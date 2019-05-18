@@ -26,11 +26,25 @@ $values = [
 
 $tops = $ffi->new('struct template_operations');
 $tops->assign = function($type, $name) use ($ffi, $values){
-    if (isset($values[$name]))
-        $v = $values[$name];
-    else
-        $v = '';
-    $ffi->return_value_set($v);
+    switch ($type){
+    case 'var':
+        if (isset($values[$name]))
+            $v = $values[$name];
+        else
+            $v = '';
+        $ffi->return_value_set($v);
+
+    case 'func':
+        // call funcs
+        break;
+
+    case 'ctrl':
+        // if, foreach, ...
+        break;
+        
+    default:
+        return 0;
+    }
     return 0;
 };
 

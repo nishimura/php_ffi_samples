@@ -63,7 +63,7 @@ make
 * 3: call with closure argument
 * 4: c struct, php reference and callback
 * 5: FFI bridge
-* 6: call haskell functions directly
+* 6, 7: call haskell functions directly
 
 
 
@@ -75,7 +75,7 @@ require: haskell build tools (ghc)
 
 PHP => FFI C => FFI Haskell => Callback C => Callback PHP => Set c variable instead of return value
 
-### sample6
+### sample6, sample7
 
 PHP => FFI Haskell Callback PHP => Set haskell IORef instead of return value
 

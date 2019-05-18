@@ -1,0 +1,59 @@
+<?php
+$ffi = FFI::cdef('
+int hs_init(int *, char **[]);
+int hs_exit();
+
+typedef struct template_operations
+{
+  size_t (*assign)(const char * key, const char * value);
+} CTOPS;
+
+const char* parse(char *data, struct template_operations *tops);
+void return_value_set(const char *value);
+const char * return_value_get();
+
+', __DIR__ . '/libtemplate.so');
+
+$argc = FFI::new('int');
+$argv = FFI::new('char[0]');
+$pargv = FFI::addr($argv);
+$ffi->hs_init(FFI::addr($argc), FFI::addr($pargv));
+
+$values = [
+    'var1' => 'text1',
+    'var2' => 'text2',
+];
+
+$tops = $ffi->new('struct template_operations');
+$tops->assign = function($type, $name) use ($ffi, $values){
+    if (isset($values[$name]))
+        $v = $values[$name];
+    else
+        $v = '';
+    $ffi->return_value_set($v);
+    return 0;
+};
+
+$data = '
+<DOCTYPE html>
+
+<div>
+  <div>{$var1}</div>
+  <span>{$var2}</span>
+</div>
+';
+$ret = $ffi->parse($data, FFI::addr($tops));
+
+echo $ret;
+
+
+$ffi->hs_exit();
+
+
+/*
+ Output
+
+string(9) "foo = bar"
+string(30) "hsParse finish: [9][foo = bar]"
+
+ */

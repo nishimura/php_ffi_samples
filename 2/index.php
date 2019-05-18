@@ -13,14 +13,12 @@ var_dump($ffi->sample("sample test test", 3));
 var_dump($ffi->sample("sample test test", 4));
 var_dump($ffi->sample("sample test test", 1));
 
-/*
-
- output:
+/* output:
 
 object(FFI)#1 (0) {
 }
-string(6) "SamPle"
-string(6) "SampLe"
-string(6) "SAMPLE"
+string(16) "SamPle teSt TesT"
+string(16) "SampLe tEst Test"
+string(16) "SAMPLE TEST TEST"
 
  */

@@ -10,7 +10,7 @@ const char * sample(const char *data, callback_t callback)
   const char * ret = buf;
   int i;
 
-  for (i = 0; i <= strlen(data) && BUF_SIZE; i++){
+  for (i = 0; i <= strlen(data) && i <= BUF_SIZE; i++){
     if (data[i] >= 97 && data[i] <= 122 && callback(i))
       buf[i] = data[i] - 32;
     else

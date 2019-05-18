@@ -53,7 +53,7 @@ $ffi->hs_exit();
 /*
  Output
 
-string(9) "foo = bar"
-string(30) "hsParse finish: [9][foo = bar]"
+text1
+text2
 
  */
